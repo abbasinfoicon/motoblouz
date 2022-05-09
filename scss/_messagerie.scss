@@ -1,0 +1,607 @@
+/*========================================================================================================
+================================ Messagerie ===================================================================
+===========================================================================================================*/
+
+//messagerie-info
+.messagerie-info {
+  background: $white;
+  border: 1px solid $border;
+  padding: 6px;
+
+
+  //col-md-4
+  .col-md-4 {
+    @include mq(min, 992) {
+      padding: 0;
+      width: 36.333333%;
+    }
+  }
+
+  //col-md-8
+  .col-md-8 {
+    @include mq(min, 992) {
+      width: 63.666667%;
+    }
+  }
+}
+
+//messagerie-left
+.messagerie-left {
+  padding: 5px 5px 30px;
+  background: $gray;
+
+  .media {
+    position: relative;
+    background: $white;
+    padding: 12px 16px;
+    margin-top: 5px;
+
+
+    &:last-child {
+      margin-bottom: 15px;
+    }
+
+    &.active {
+      border: 1px solid $darkred;
+    }
+
+    .media-left {
+      padding-right: 15px;
+      position: relative;
+
+      //notification-bell
+      .notification-bell {
+        width: 0;
+        height: 0;
+        border-top: 50px solid $pinkcolor;
+        border-right: 60px solid transparent;
+        position: relative;
+        left: -16px;
+        top: -15px;
+
+        i.fa {
+          color: $white;
+          position: absolute;
+          top: -41px;
+          left: 9px;
+        }
+      }
+
+      img {
+        width: 70px;
+        height: auto;
+      }
+    }
+
+    .media-body {
+      h3 {
+        @include montserrat(medium500);
+        font-size: 17px;
+        color: $black;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+
+      p {
+        @include arial(regular400);
+        font-size: 14px;
+        color: $p-color;
+        margin-bottom: 10px;
+      }
+
+      h5 {
+        padding: 0;
+
+        span.color-yellow {
+          color: $pinkcolor;
+        }
+      }
+
+      //litige
+      .litige {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 70px solid #fd003a;
+        border-left: 95px solid transparent;
+        top: 0;
+        right: 0;
+
+        p {
+          position: absolute;
+          color: $white;
+          @include arial(bold700);
+          font-size: 15px;
+          top: -62px;
+          left: -51px;
+          letter-spacing: 0.2px;
+        }
+      }
+
+    }
+  }
+}
+
+
+//pos-right
+.pos-right {
+
+  .fa {
+    position: absolute;
+    right: 20px;
+  }
+
+  //fa-star
+  .fa-star {
+    top: 11px;
+    color: $pinkcolor;
+    cursor: pointer;
+  }
+
+  //fa-trash
+  .fa-trash {
+    bottom: 11px;
+    color: $p-color;
+    cursor: pointer;
+  }
+}
+
+
+//pagination-number
+.pagination-number {
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+
+  ul {
+    text-align: right;
+
+    li {
+      display: inline-block;
+
+      a {
+        color: rgba(0, 0, 0, 0.66);
+        @include arial(regular400);
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+//msg-section
+.msg-section {
+  padding: 30px;
+  border: 1px solid $border;
+  margin-bottom: 10px;
+
+
+  //dt-tm
+  .dt-tm {
+    ul {
+      padding-left: 27px;
+
+      li {
+        font-size: 12px;
+        @include arial(regular400);
+        color: rgba(0, 0, 0, .68);
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+
+  .msg-info {
+    padding: 15px 28px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      left: -12px;
+      bottom: 0;
+    }
+
+    p {
+      font-size: 15px;
+      @include arial(regular400);
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+      color: #7c7c7c;
+    }
+  }
+
+  //detail-msg
+  .detail-msg {
+    margin-bottom: 35px;
+
+    &:last-child {
+      //margin-bottom: 0;
+    }
+
+    //user-msg
+    &.first-msg {
+      .msg-info {
+        background: #f3f3f6;
+
+        &:before {
+          border-bottom: 12px solid #f3f3f6;
+        }
+      }
+    }
+
+    &.litige-msg {
+      h3 {
+        @include arial(bold700);
+        font-size: 13px;
+        color: $black;
+        letter-spacing: 0.1px;
+        margin-bottom: 8px;
+      }
+    }
+
+    &.second-msg {
+      .msg-info {
+        background: #fdf6e3;
+
+        &:before {
+          border-bottom: 12px solid #fdf6e3;
+        }
+      }
+    }
+
+    &.third-msg {
+      .msg-info {
+        background: #d35400;
+
+        &:before {
+          border-bottom: 12px solid #d35400;
+        }
+
+        p {
+          color: $white;
+
+          a {
+            color: $white;
+            background: $black;
+            padding: 6px 6px;
+            font-weight: bold;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+//send-section
+.send-section {
+  border: 1px solid $border;
+  padding: 5px 5px 5px 19px;
+  margin-bottom: 10px;
+
+  .form-send {
+    position: relative;
+    min-height: 58px;
+
+    img {
+      position: absolute;
+      top: 8px;
+      left: 7px;
+    }
+
+    textarea {
+      font-size: 15px;
+      color: #7c7c7c;
+      @include arial(regular400);
+      padding: 6px 95px 6px 39px;
+      border: none;
+      box-shadow: none;
+      height: 58px;
+      max-height: auto;
+      resize: none;
+
+      &::placeholder {
+        color: #7c7c7c;
+      }
+    }
+
+    .envoyer-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 13px;
+      @include montserrat(medium500);
+      color: $white;
+      text-transform: uppercase;
+      background: $pinkcolor;
+      @include border-radius(0);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: $lblk-button;
+        border-color: $lblk-button;
+      }
+    }
+  }
+}
+
+//make-an-offer
+.make-an-offer {
+  display: inline-flex;
+  float: right;
+  padding: 5px 190px 5px 30px;
+  border: 1px solid $border;
+  position: relative;
+  align-items: center;
+
+  @include mq(max, 767) {
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  @include mq(max, 500) {
+    padding: 15px 30px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 34px;
+    width: 1px;
+    background: $black;
+    top: 50%;
+    left: 220px;
+    transform: translateY(-50%);
+
+    @include min-max(992, 1270) {
+      left: 162px;
+    }
+
+    @include mq(max, 767) {
+      content: none;
+    }
+  }
+
+  p {
+    font-size: 17px;
+    @include arial(bold700);
+    margin-right: 65px;
+    margin-top: 3px;
+
+    img {
+      display: inline-block;
+      position: relative;
+      top: -2px;
+      margin-right: 12px;
+    }
+
+    @include min-max(992, 1270) {
+      margin-right: 30px;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    @include mq(max, 767) {
+      margin-right: 30px;
+      border-bottom: 1px solid $black;
+      padding-bottom: 10px;
+    }
+
+    @include mq(max, 500) {
+      margin: 0 auto;
+    }
+  }
+
+  .price-input {
+    @include arial(regular400);
+    font-size: 15px;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    height: 58px;
+    color: $black;
+
+    &::placeholder {
+      font-style: italic;
+      color: $black;
+      white-space: pre-wrap;
+      position: relative;
+      top: -8px;
+
+      @include mq(max, 767) {
+        top: 0;
+      }
+    }
+
+    @include mq(max, 767) {
+      height: 38px;
+    }
+
+    @include mq(max, 500) {
+      text-align: center;
+      width: 100%;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .btn-valider {
+    position: absolute;
+    right: 0;
+    font-size: 13px;
+    @include montserrat(medium500);
+    text-transform: uppercase;
+    color: $white;
+    background: #adadad;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    padding: 21px 15px;
+    margin-right: 5px;
+    line-height: 1.5;
+
+    &.bg-green {
+      background: #24a71a;
+    }
+
+    &:hover {
+      background: $lblk-button;
+      border-color: $lblk-button;
+    }
+
+    @include mq(max, 767) {
+      top: 0;
+      height: 80px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    @include mq(max, 500) {
+      position: static;
+      width: 100%;
+      margin: 0 auto;
+      padding: 10px 15px;
+      height: auto;
+    }
+  }
+
+  //make-an-offer2
+  &.make-an-offer2 {
+    padding: 5px 190px 5px 15px;
+    width: 100%;
+
+    @include mq(max, 768){
+      padding: 15px 30px;
+    }
+
+    &:before {
+      content: none;
+    }
+
+    input {
+      border-left: 1px solid #828282;
+      width: 116px;
+      font-size: 13px;
+      @include arial(regular400);
+      height: 30px;
+      padding-left: 15px;
+
+      @include mq(max, 768){
+        width: 100%;
+        border: none;
+        height: auto;
+        border-bottom: 1px solid #828282;
+        padding-left: 0;
+        height: 30px;
+      }
+    }
+
+    //btn-valider
+    .btn-valider {
+      padding: 15px 20px;
+    }
+
+    .media {
+      width: 374px;
+
+      @include mq(max, 992) {
+        width: auto;
+      }
+
+      .media-left {
+        vertical-align: middle;
+        padding-left: 15px;
+      }
+
+      .media-body {
+      }
+    }
+
+    p {
+      @include arial(bold700);
+      color: $black;
+      font-size: 13px;
+      margin: 0;
+      line-height: 1.25;
+      border: none;
+
+      a {
+        color: $pinkcolor;
+        margin: 0;
+      }
+    }
+  }
+}
+
+//cliquez-ici
+.cliquez-ici {
+  @include full-width;
+  margin: 10px 0;
+  border: 1px solid $border;
+  background: #f9fafd;
+  height: 70px;
+
+  @include mq(max, 992){
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .media {
+    .media-left {
+      img {
+      }
+    }
+
+    .media-body {
+      vertical-align: middle;
+
+      h3 {
+        @include arial(bold700);
+        font-size: 15px;
+        color: $pinkcolor;
+        letter-spacing: 0.3px;
+        margin-bottom: 10px;
+      }
+
+      a {
+        @include arial(bold700);
+        font-size: 15px;
+        color: $black;
+        text-transform: uppercase;
+        text-decoration: underline;
+        margin-left: 7px;
+        letter-spacing: 0.2px;
+      }
+
+
+    }
+  }
+}
+
